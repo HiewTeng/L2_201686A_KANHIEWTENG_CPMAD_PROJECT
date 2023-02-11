@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.firebase_redo">
+    <!-- Flutter needs it to communicate with the running application
+         to allow setting
+    breakpoints, to provide hot reload, etc.
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <application>
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCF8Id-vCkuld1TruXIq3iE0N52_pAP5QU
+        " />
+    </application>
+</manifest>
