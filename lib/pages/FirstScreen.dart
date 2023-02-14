@@ -1,6 +1,7 @@
+import 'package:firebase_redo/pages/RegisterPage.dart';
 import 'package:flutter/material.dart';
 
-import 'login_page.dart';
+import 'LoginPage.dart';
 
 class FirstScreen extends StatefulWidget {
   FirstScreen({Key key}) : super(key: key);
@@ -47,6 +48,7 @@ class _FirstScreenState extends State<FirstScreen> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => LoginPage()),
+                                // builder: (context) => RegisterPage()),
                               );
                             },
                             child: Text('Register'),

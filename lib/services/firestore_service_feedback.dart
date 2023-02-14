@@ -15,7 +15,6 @@ class FirestoreService {
       'food': feedbackfood,
       'customer service': feedbackcs,
       'improvement': feedbackimprove,
-      // 'location': bookDescription
     });
   }
 

@@ -1,8 +1,9 @@
 import 'package:firebase_redo/pages/ActivitiesPage.dart';
-import 'package:firebase_redo/pages/MyHomePage%20copy.dart';
 import 'package:firebase_redo/services/firestore_service_reservation.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+import 'MyHomePage.dart';
 
 class Reservationpage extends StatefulWidget {
   Reservationpage({Key key}) : super(key: key);
@@ -45,43 +46,6 @@ class _ReservationpageState extends State<Reservationpage> {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
                 ),
               ),
-              // Padding(
-              //   padding: EdgeInsets.all(15),
-              //   child: TextField(
-              //     controller: controller_pax,
-              //     decoration: InputDecoration(
-              //       border: OutlineInputBorder(),
-              //       labelText: 'Number of pax',
-              //     ),
-              //   ),
-              // ),
-
-              // TextFormField(
-              //                 keyboardType: TextInputType.text,
-              //                 decoration: InputDecoration(labelText: 'Number of pax'),
-              //                 validator: (val) => val.length == 0 ? "Numebr of pax" : null,
-              //                 onSaved: (val) => this.reservationPax = val,
-              //               ),
-
-              // TextFormField(
-              //   keyboardType: TextInputType.text,
-              //   decoration: InputDecoration(
-              //       border: OutlineInputBorder(), labelText: 'Number of pax'),
-              //   validator: (val) => val.length == 0 ? "Numebr of pax" : null,
-              //   onSaved: (val) => this.reservationPax = val,
-              // ),
-
-              // Padding(
-              //   padding: EdgeInsets.all(15),
-              //   child: TextField(
-              //     controller: controller_date,
-              //     decoration: InputDecoration(
-              //       border: OutlineInputBorder(),
-              //       labelText: 'Date',
-              //     ),
-              //   ),
-              // ),
-
               Padding(
                 padding: EdgeInsets.all(15),
                 child: TextFormField(
@@ -92,7 +56,6 @@ class _ReservationpageState extends State<Reservationpage> {
                   onSaved: (val) => this.reservationDate = val,
                 ),
               ),
-
               Padding(
                 padding: EdgeInsets.all(15),
                 child: TextFormField(
@@ -103,7 +66,6 @@ class _ReservationpageState extends State<Reservationpage> {
                   onSaved: (val) => this.reservationPax = val,
                 ),
               ),
-
               Padding(
                 padding: EdgeInsets.all(15),
                 child: TextFormField(
@@ -116,22 +78,8 @@ class _ReservationpageState extends State<Reservationpage> {
                   onSaved: (val) => this.reservationOccasion = val,
                 ),
               ),
-
-              // Container(
-              //   margin: const EdgeInsets.only(top: 10.0),
-              //   child: RaisedButton(
-              //     onPressed: _submit,
-              //     child: Text('Reserve'),
-              //   ),
-              // ),
               Container(
                 margin: const EdgeInsets.only(top: 10.0),
-                // child: _isLoading
-                //     ? CircularProgressIndicator()
-                //     : RaisedButton(
-                //         onPressed: _submit,
-                //         child: Text('Submit'),
-                //       ),
                 child: _isLoading
                     ? Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -162,11 +110,7 @@ class _ReservationpageState extends State<Reservationpage> {
       formKey.currentState.save();
       await Future.delayed(Duration(seconds: 2));
       Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => MyHomePage(
-                    id: null,
-                  )));
+          context, MaterialPageRoute(builder: (context) => MyHomePage()));
     } else {
       return null;
     }

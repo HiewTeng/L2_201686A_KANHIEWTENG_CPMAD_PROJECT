@@ -1,7 +1,10 @@
+import 'package:firebase_redo/model/walkin.dart';
 import 'package:flutter/material.dart';
 
 class HistoryPage extends StatefulWidget {
-  HistoryPage({Key key}) : super(key: key);
+  final WalkIn walkInData;
+
+  HistoryPage({Key key, @required this.walkInData}) : super(key: key);
 
   @override
   State<HistoryPage> createState() => _HistoryPageState();
@@ -45,6 +48,8 @@ class _HistoryPageState extends State<HistoryPage> {
                 child: Row(
                   children: [
                     Icon(Icons.access_alarm_outlined),
+                    // Text(walkInData.date),
+
                     Text('11/2/2022, 13:00'),
                   ],
                 ),

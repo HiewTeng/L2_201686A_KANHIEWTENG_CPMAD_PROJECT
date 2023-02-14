@@ -21,37 +21,32 @@ class StartState extends State<SplashScreen> {
   }
 
   startTimer() async {
-    var duration = Duration(seconds: 5);
+    var duration = Duration(seconds: 3);
     return new Timer(duration, route);
   }
 
   route() {
     Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-            // builder: (context) => LoginPage()
-            builder: (context) => FirstScreen()));
+        context, MaterialPageRoute(builder: (context) => FirstScreen()));
   }
 
   initScreen(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.yellow[100],
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // Container(
-            //   child: Image.asset("images/logo.png"),
-            // ),
             Padding(padding: EdgeInsets.only(top: 20.0)),
-            Text(
-              "QRestaurant",
-              style: TextStyle(fontSize: 20.0, color: Colors.white),
-            ),
+            Text("QRestaurant",
+                style: TextStyle(
+                    fontSize: 35.0,
+                    color: Colors.orange,
+                    fontWeight: FontWeight.bold)),
             Padding(padding: EdgeInsets.only(top: 20.0)),
             CircularProgressIndicator(
-              backgroundColor: Colors.white,
-              strokeWidth: 1,
+              backgroundColor: Colors.orange,
+              strokeWidth: 3,
             )
           ],
         ),

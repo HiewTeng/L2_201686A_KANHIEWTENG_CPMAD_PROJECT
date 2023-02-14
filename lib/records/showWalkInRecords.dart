@@ -1,5 +1,8 @@
 import 'package:firebase_redo/model/book.dart';
-import 'package:firebase_redo/services/firestore_service.dart';
+import 'package:firebase_redo/model/reservation.dart';
+import 'package:firebase_redo/model/walkin.dart';
+import 'package:firebase_redo/services/firestore_service_walkin.dart';
+// import 'package:firebase_redo/services/firestore_service.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -14,11 +17,8 @@ class _RecordsPageState extends State<RecordsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Profile'),
-      ),
-      body: FutureBuilder<List<Profile>>(
-        future: FirestoreService().readBookData(),
+      body: FutureBuilder<List<WalkIn>>(
+        future: FirestoreService().readWalkInData(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
@@ -30,31 +30,26 @@ class _RecordsPageState extends State<RecordsPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        snapshot.data[index].birthdate,
+                        snapshot.data[index].date,
                         style: TextStyle(color: Colors.blue, fontSize: 16.0),
                       ),
                       Column(
                         children: [
                           Text(
-                            snapshot.data[index].email,
+                            snapshot.data[index].pax,
                             style:
                                 TextStyle(color: Colors.black, fontSize: 14.0),
                           ),
-                          Text(
-                            snapshot.data[index].password,
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 12.0),
-                          ),
-                          Text(
-                            snapshot.data[index].phoneno,
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 12.0),
-                          ),
-                          Text(
-                            snapshot.data[index].uid,
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 12.0),
-                          ),
+                          // Text(
+                          //   snapshot.data[index].occasion,
+                          //   style:
+                          //       TextStyle(color: Colors.black, fontSize: 12.0),
+                          // ),
+                          // Text(
+                          //   snapshot.data[index].username,
+                          //   style:
+                          //       TextStyle(color: Colors.black, fontSize: 12.0),
+                          // ),
                         ],
                       ),
                       IconButton(
@@ -63,7 +58,7 @@ class _RecordsPageState extends State<RecordsPage> {
                         onPressed: () async {
                           setState(() {
                             FirestoreService()
-                                .deleteBookData(snapshot.data[index].uid);
+                                .deleteWalkInData(snapshot.data[index].uid);
                           });
                           Fluttertoast.showToast(
                               msg: "Data deleted successfully",

@@ -1,13 +1,12 @@
-class Reservation {
+class Profile {
   String date;
   String pax;
   String occasion;
-  // String location;
   String uid;
 
-  Reservation({this.date, this.pax, this.occasion, this.uid});
+  Profile({this.date, this.pax, this.occasion, this.uid});
 
-  Reservation.fromMap(Map<String, dynamic> data) {
+  Profile.fromMap(Map<String, dynamic> data) {
     date = data['date'];
     pax = data['pax'];
     occasion = data['occasion'];

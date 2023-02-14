@@ -2,7 +2,6 @@ class Feedback {
   String food;
   String cs;
   String improve;
-  // String location;
   String uid;
 
   Feedback({this.food, this.cs, this.improve, this.uid});

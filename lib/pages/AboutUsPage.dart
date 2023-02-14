@@ -35,7 +35,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 child: Text(
-                  'Hello there! Welcome to QRestaurant. We are a start up and we wish to help people to queue digitally to avoid wasting time queueing physically. We have seen many individuals left the queue half way with an empty and disapointing stomach after queueing for an hour or more. In order to avoid such situations, we have come up with a digital queue so you can shop around the mall while staying in the queue! We hope this application will benefit you in many ways and if there is any feedback, please let us know. Thank you! - Cut D\' Queue',
+                  'Hello there! Welcome to QRestaurant. We are a start up and we wish to help people to queue digitally to avoid wasting time queueing physically. We have seen many individuals left the queue half way with an empty and disapointing stomach after queueing for an hour or more. In order to avoid such situations, we have come up with a digital queue so you can shop around the mall while staying in the queue! We hope this application will benefit you in many ways and if there is any feedback, please let us know. Thank you! - QRestaurant',
                   style: TextStyle(fontSize: 20),
                 ),
               ),

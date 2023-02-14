@@ -1,13 +1,12 @@
-class Reservation {
+class WalkIn {
   String date;
   String pax;
   String occasion;
-  // String location;
   String uid;
 
-  Reservation({this.date, this.pax, this.occasion, this.uid});
+  WalkIn({this.date, this.pax, this.occasion, this.uid});
 
-  Reservation.fromMap(Map<String, dynamic> data) {
+  WalkIn.fromMap(Map<String, dynamic> data) {
     date = data['date'];
     pax = data['pax'];
     occasion = data['occasion'];

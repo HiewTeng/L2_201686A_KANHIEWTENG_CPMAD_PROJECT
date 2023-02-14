@@ -59,13 +59,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
       case 1:
         return new ActivitiesPage(
-          pax: widget.pax,
-          date: widget.date,
-          occasion: widget.occasion,
-          walkpax: widget.walkpax,
-          walkdate: widget.walkdate,
-          walkoccasion: widget.walkoccasion,
-        );
+            // pax: widget.pax,
+            // date: widget.date,
+            // occasion: widget.occasion,
+            // walkpax: widget.walkpax,
+            // walkdate: widget.walkdate,
+            // walkoccasion: widget.walkoccasion,
+            );
 
       case 2:
         return new AboutUsPage();

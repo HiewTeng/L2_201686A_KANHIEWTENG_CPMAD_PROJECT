@@ -31,8 +31,6 @@ class _LoginPageState extends State<LoginPage> {
               controller: emailController,
               decoration: InputDecoration(
                   border: OutlineInputBorder(), labelText: 'abc@gmail.com'),
-              //   labelText: "Email",
-              // ),
             ),
           ),
           Padding(
@@ -42,9 +40,6 @@ class _LoginPageState extends State<LoginPage> {
               decoration: InputDecoration(
                   border: OutlineInputBorder(), labelText: 'Password'),
               obscureText: true,
-              // decoration: InputDecoration(
-              //   labelText: "Password",
-              // ),
             ),
           ),
           RaisedButton(

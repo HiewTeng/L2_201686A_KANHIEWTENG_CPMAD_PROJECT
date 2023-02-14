@@ -38,7 +38,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: new ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.yellow,
       ),
       home: DefaultTabController(
         length: 3,
@@ -70,10 +70,13 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                   // occasion: widget.occasion,
                   ),
               ActiveWalkInPage(
-                  walkpax: widget.walkpax,
-                  walkdate: widget.walkdate,
-                  walkoccasion: widget.walkoccasion),
-              HistoryPage(),
+                  // walkpax: widget.walkpax,
+                  // walkdate: widget.walkdate,
+                  // walkoccasion: widget.walkoccasion
+                  ),
+              HistoryPage(
+                walkInData: null,
+              ),
             ],
           ),
         ),
