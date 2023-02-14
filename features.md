@@ -30,6 +30,5 @@ feature 5
 feature 6
 - walk in (waiting time and no of ppl infront)
 
-
 feature 6 
 - button to top button
