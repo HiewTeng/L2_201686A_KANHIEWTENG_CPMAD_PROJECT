@@ -144,7 +144,11 @@ class _WalkInPageState extends State<WalkInPage> {
       formKey.currentState.save();
       await Future.delayed(Duration(seconds: 2));
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => MyHomePage()));
+          context,
+          MaterialPageRoute(
+              builder: (context) => MyHomePage(
+                    id: null,
+                  )));
     } else {
       return null;
     }
