@@ -5,9 +5,6 @@ import 'ActiveWalkInPage.dart';
 import 'HistoryPage.dart';
 
 class ActivitiesPage extends StatefulWidget {
-  // final String id;
-  // final String pwd;
-
   final String pax;
   final String date;
   final String occasion;
@@ -18,8 +15,6 @@ class ActivitiesPage extends StatefulWidget {
 
   ActivitiesPage(
       {Key key,
-      // this.id,
-      // this.pwd,
       this.pax,
       this.date,
       this.occasion,
@@ -64,16 +59,8 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
           ),
           body: TabBarView(
             children: [
-              ActivePage(
-                  // pax: widget.pax,
-                  // date: widget.date,
-                  // occasion: widget.occasion,
-                  ),
-              ActiveWalkInPage(
-                  // walkpax: widget.walkpax,
-                  // walkdate: widget.walkdate,
-                  // walkoccasion: widget.walkoccasion
-                  ),
+              ActivePage(),
+              ActiveWalkInPage(),
               HistoryPage(
                 walkInData: null,
               ),

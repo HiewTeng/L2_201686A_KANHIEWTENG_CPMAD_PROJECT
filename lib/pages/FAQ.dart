@@ -122,10 +122,6 @@ class _FAQPageState extends State<FAQPage> {
                     style: TextStyle(color: Colors.black, fontSize: 20)),
                 children: <Widget>[
                   ListTile(
-                    // title: Text(
-                    //   'You can view it at "Activities page".',
-                    //   style: TextStyle(color: Colors.blue, fontSize: 18),
-                    // ),
                     title: Text(
                       'You can view it at Activities Page!',
                       style: TextStyle(color: Colors.blue, fontSize: 18),

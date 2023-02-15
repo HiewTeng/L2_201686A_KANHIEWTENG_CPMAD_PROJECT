@@ -2,7 +2,6 @@ class Reservation {
   String date;
   String pax;
   String occasion;
-  // String location;
   String uid;
 
   Reservation({this.date, this.pax, this.occasion, this.uid});

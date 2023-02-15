@@ -48,8 +48,6 @@ class _HistoryPageState extends State<HistoryPage> {
                 child: Row(
                   children: [
                     Icon(Icons.access_alarm_outlined),
-                    // Text(walkInData.date),
-
                     Text('11/2/2022, 13:00'),
                   ],
                 ),
