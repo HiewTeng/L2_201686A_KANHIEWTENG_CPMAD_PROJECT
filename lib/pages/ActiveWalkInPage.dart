@@ -5,13 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class ActiveWalkInPage extends StatefulWidget {
-  // final String walkpax;
-  // final String walkdate;
-  // final String walkoccasion;
-
-  // ActiveWalkInPage({Key key, this.walkpax, this.walkdate, this.walkoccasion})
-  //     : super(key: key);
-
   @override
   State<ActiveWalkInPage> createState() => _ActiveWalkInPageState();
 }
@@ -28,7 +21,7 @@ class _ActiveWalkInPageState extends State<ActiveWalkInPage> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
-                  child: Text('Walk-In(S)',
+                  child: Text('WALK-IN(S)',
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
                 ),
@@ -95,8 +88,8 @@ class _ActiveWalkInPageState extends State<ActiveWalkInPage> {
                               padding: EdgeInsets.all(8.0),
                               child: Row(
                                 children: [
-                                  Icon(Icons.access_alarm_outlined),
-                                  Text(' Date: ' + snapshot.data[index].date),
+                                  Icon(Icons.person_outline_outlined),
+                                  Text(' Name: ' + snapshot.data[index].name),
                                 ],
                               ),
                             ),
@@ -105,7 +98,18 @@ class _ActiveWalkInPageState extends State<ActiveWalkInPage> {
                               padding: EdgeInsets.all(8.0),
                               child: Row(
                                 children: [
-                                  Icon(Icons.accessibility),
+                                  Icon(Icons.phone_android_outlined),
+                                  Text(' Phone No: ' +
+                                      snapshot.data[index].phoneno),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.topLeft,
+                              padding: EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.people_alt_outlined),
                                   Text(' Number of pax: ' +
                                       snapshot.data[index].pax),
                                 ],
@@ -116,9 +120,12 @@ class _ActiveWalkInPageState extends State<ActiveWalkInPage> {
                               padding: EdgeInsets.all(8.0),
                               child: Row(
                                 children: [
-                                  Icon(Icons.celebration),
-                                  Text(' Occasion: ' +
-                                      snapshot.data[index].occasion),
+                                  Icon(Icons.nature_people_outlined),
+                                  Text(
+                                    ' Number of people before you: 7',
+                                    style: TextStyle(
+                                        color: Colors.red), // add this line
+                                  ),
                                 ],
                               ),
                             ),
@@ -129,7 +136,7 @@ class _ActiveWalkInPageState extends State<ActiveWalkInPage> {
                                 children: [
                                   Icon(Icons.location_on_outlined),
                                   Text(
-                                      '78 Airport Blvd., #B2 - 224, Singapore 819666'),
+                                      ' 78 Airport Blvd., #B2 - 224, Singapore 819666'),
                                 ],
                               ),
                             ),

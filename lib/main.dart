@@ -1,12 +1,8 @@
 import 'package:firebase_redo/pages/LoginPage.dart';
 import 'package:firebase_redo/pages/MyHomePage.dart';
-import 'package:firebase_redo/pages/RegisterPage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-
-import 'pages/HomePage.dart';
 import 'pages/StartPage.dart';
-// import 'pages/login_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +22,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login': (context) => LoginPage(),
         // '/registerpage': (context) => RegisterPage(),
-        '/home': (context) => MyHomePage(),
+        '/home': (context) => MyHomePage(
+              id: null,
+            ),
       },
       home: SplashScreen(),
       // home: LoginPage(),

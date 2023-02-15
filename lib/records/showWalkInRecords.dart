@@ -1,8 +1,5 @@
-import 'package:firebase_redo/model/book.dart';
-import 'package:firebase_redo/model/reservation.dart';
 import 'package:firebase_redo/model/walkin.dart';
 import 'package:firebase_redo/services/firestore_service_walkin.dart';
-// import 'package:firebase_redo/services/firestore_service.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -30,13 +27,13 @@ class _RecordsPageState extends State<RecordsPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        snapshot.data[index].date,
+                        snapshot.data[index].name,
                         style: TextStyle(color: Colors.blue, fontSize: 16.0),
                       ),
                       Column(
                         children: [
                           Text(
-                            snapshot.data[index].pax,
+                            snapshot.data[index].phoneno,
                             style:
                                 TextStyle(color: Colors.black, fontSize: 14.0),
                           ),

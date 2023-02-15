@@ -76,7 +76,9 @@ class _FAQPageState extends State<FAQPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ProfilePage(id: null,)),
+                              builder: (context) => ProfilePage(
+                                    id: null,
+                                  )),
                         );
                       },
                     ),

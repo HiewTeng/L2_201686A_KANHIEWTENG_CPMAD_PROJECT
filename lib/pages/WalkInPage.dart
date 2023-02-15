@@ -12,17 +12,9 @@ class WalkInPage extends StatefulWidget {
 }
 
 class _WalkInPageState extends State<WalkInPage> {
-  // String walkpax = '';
-  // String walkdate = '';
-  // String walkoccasion = '';
-
-  // TextEditingController controller_walkpax = TextEditingController();
-  // TextEditingController controller_walkdate = TextEditingController();
-  // TextEditingController controller_walkoccasion = TextEditingController();
-
+  String walkinName;
+  String walkinPhoneNo;
   String walkinPax;
-  String walkinDate;
-  String walkinOccasion;
 
   final formKey = GlobalKey<FormState>();
   bool _isLoading = false;
@@ -45,21 +37,6 @@ class _WalkInPageState extends State<WalkInPage> {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
                 ),
               ),
-              // appBar: AppBar(
-              //   title: Text('WALK-IN QUEUE'),
-              // ),
-              // body: SingleChildScrollView(
-              //   padding: EdgeInsets.all(15),
-              //   child: Column(
-              //     children: <Widget>[
-              //       Padding(
-              //         padding: const EdgeInsets.all(10.0),
-              //         child: Container(
-              //           child: Text('WALK-IN QUEUE',
-              //               style:
-              //                   TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
-              //         ),
-              //       ),
               Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
@@ -85,9 +62,9 @@ class _WalkInPageState extends State<WalkInPage> {
                 child: TextFormField(
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), labelText: 'Date'),
-                  validator: (val) => val.length == 0 ? "Date" : null,
-                  onSaved: (val) => this.walkinDate = val,
+                      border: OutlineInputBorder(), labelText: 'Name'),
+                  validator: (val) => val.length == 0 ? "Name" : null,
+                  onSaved: (val) => this.walkinName = val,
                 ),
               ),
               Padding(
@@ -95,21 +72,19 @@ class _WalkInPageState extends State<WalkInPage> {
                 child: TextFormField(
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), labelText: 'Numebr of pax'),
+                      border: OutlineInputBorder(), labelText: 'Phone No'),
+                  validator: (val) => val.length == 0 ? "Phone No" : null,
+                  onSaved: (val) => this.walkinPhoneNo = val,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(15),
+                child: TextFormField(
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(), labelText: 'Number of pax'),
                   validator: (val) => val.length == 0 ? "Number of pax" : null,
                   onSaved: (val) => this.walkinPax = val,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(15),
-                child: TextFormField(
-                  keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Special Occasion(s)'),
-                  validator: (val) =>
-                      val.length == 0 ? "Special Occasion(s)" : null,
-                  onSaved: (val) => this.walkinOccasion = val,
                 ),
               ),
               Container(
@@ -125,7 +100,7 @@ class _WalkInPageState extends State<WalkInPage> {
                       )
                     : RaisedButton(
                         onPressed: _submit,
-                        child: Text("Walk now!"),
+                        child: Text("Walk in now!"),
                       ),
               )
             ],
@@ -153,8 +128,11 @@ class _WalkInPageState extends State<WalkInPage> {
       return null;
     }
 
-    FirestoreService().addWalkInData(walkinDate, walkinPax, walkinOccasion);
+    FirestoreService().addWalkInData(walkinName, walkinPhoneNo, walkinPax);
 
-    Fluttertoast.showToast(msg: "Queueing now!", gravity: ToastGravity.TOP);
+    Fluttertoast.showToast(
+        msg:
+            "You are now in the queue. We will message you when it's your turn. Waiting time: 7mins",
+        gravity: ToastGravity.TOP);
   }
 }

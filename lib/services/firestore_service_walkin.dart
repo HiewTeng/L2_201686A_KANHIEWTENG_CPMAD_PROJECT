@@ -6,14 +6,15 @@ class FirestoreService {
       FirebaseFirestore.instance.collection('walkIn');
 
   Future<void> addWalkInData(
-      String walkinName, String walkinPhoneNo) async {
+      String walkinName, String walkinPhoneNo, String wakinPax) async {
     var docRef = FirestoreService().walkInCollection.doc();
     print('update docRef:' + docRef.id);
 
-    await walkInCollection.doc(docRef.id).update({
+    await walkInCollection.doc(docRef.id).set({
       'uid': docRef.id,
       'name': walkinName,
       'phoneno': walkinPhoneNo,
+      'pax': wakinPax,
 
       // await walkInCollection.doc(docRef.id).set({
       //   'uid': docRef.id,
@@ -44,7 +45,7 @@ class FirestoreService {
   }
 
   Future<void> updateWalkInData(
-       String walkinName, String walkinPhoneNo) async {
+      String walkinName, String walkinPhoneNo, wakinPax) async {
     var docRef = FirestoreService().walkInCollection.doc();
     print('update docRef:' + docRef.id);
 
@@ -52,6 +53,7 @@ class FirestoreService {
       'uid': docRef.id,
       'name': walkinName,
       'phoneno': walkinPhoneNo,
+      'pax': wakinPax,
       // 'location': bookDescription
     });
   }
@@ -64,7 +66,6 @@ class FirestoreService {
     });
   }
 }
-
 
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:firebase_redo/model/walkin.dart';

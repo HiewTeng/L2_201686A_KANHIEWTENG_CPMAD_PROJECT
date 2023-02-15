@@ -50,8 +50,10 @@ class _LoginPageState extends State<LoginPage> {
                   password: passwordController.text.trim(),
                 );
                 if (newuser != null) {
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => MyHomePage()));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => MyHomePage(
+                            id: null,
+                          )));
                 }
               } else {
                 var reguser = await FirebaseAuthService().signIn(
@@ -60,8 +62,10 @@ class _LoginPageState extends State<LoginPage> {
                 );
 
                 if (reguser != null) {
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => MyHomePage()));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => MyHomePage(
+                            id: null,
+                          )));
                 }
               }
             },

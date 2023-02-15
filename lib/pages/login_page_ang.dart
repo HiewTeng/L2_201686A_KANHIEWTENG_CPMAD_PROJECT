@@ -1,7 +1,6 @@
 import 'package:firebase_redo/services/firebaseauth_service.dart';
 import 'package:flutter/material.dart';
 import 'MyHomePage.dart';
-import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -50,8 +49,10 @@ class _LoginPageState extends State<LoginPage> {
                   password: passwordController.text.trim(),
                 );
                 if (newuser != null) {
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => MyHomePage()));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => MyHomePage(
+                            id: null,
+                          )));
                 }
               } else {
                 var reguser = await FirebaseAuthService().signIn(
@@ -60,8 +61,10 @@ class _LoginPageState extends State<LoginPage> {
                 );
 
                 if (reguser != null) {
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => MyHomePage()));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => MyHomePage(
+                            id: null,
+                          )));
                 }
               }
             },
